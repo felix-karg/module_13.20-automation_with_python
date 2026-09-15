@@ -35,3 +35,15 @@ for product_row in range(2, product_list.max_row + 1):
         total_value_per_supplier[supplier_name] = inventory * price
 
 print(total_value_per_supplier)
+
+
+### Exercise 3: Print products with invetory < 10
+product_under_10_inv = {}
+
+for product_row in range(2, product_list.max_row + 1):
+    inventory = int(product_list.cell(product_row, 2).value)
+    product_num = int(product_list.cell(product_row, 1).value)
+    if inventory < 10:
+        product_under_10_inv[product_num] = inventory
+
+print(product_under_10_inv)
