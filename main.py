@@ -47,3 +47,14 @@ for product_row in range(2, product_list.max_row + 1):
         product_under_10_inv[product_num] = inventory
 
 print(product_under_10_inv)
+
+
+### Exercise 4: Add column with total value to file
+for product_row in range(2, product_list.max_row + 1):
+    inventory = product_list.cell(product_row, 2).value
+    price = product_list.cell(product_row, 3).value
+    inventory_price = product_list.cell(product_row, 5)
+    inventory_price.value = inventory * price
+
+# save changes to a new file
+inv_file.save("inventory_with_total_value.xlsx")
